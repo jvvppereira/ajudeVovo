@@ -72,7 +72,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 /* alterar essa variavel abaixo para "BancoHostinger" OU "BancoAWS" quando colocar o banco no HOSTINGER ou no AWS */
-$active_group = 'local';
+$active_group = 'BancoHeroku';
 $query_builder = TRUE;
 
 $db['local'] = array(
