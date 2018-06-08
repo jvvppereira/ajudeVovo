@@ -140,3 +140,25 @@ $db['BancoAWS'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+
+$db['BancoHeroku'] = array(
+	'dsn'	=> '',
+	'hostname' => 'j1r4n2ztuwm0bhh5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+	'username' => 'kxy0id7qxmmhaf2w',
+	'password' => 'tolm2thfg9o1mwe7',
+	'database' => 'cel0enk8omsybxvx',
+	'dbdriver' => 'mysqli',
+	'dbprefix' => '',
+	'pconnect' => FALSE,
+	'db_debug' => (ENVIRONMENT !== 'production'),
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE
+);
