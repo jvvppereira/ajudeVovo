@@ -15,7 +15,7 @@
 	<script type="text/javascript" src="../includes/ng-jcrop/ng-jcrop.js"></script> 
 	
 	<!-- PWA ===== nao retirar  -->
-   <!-- <script type="text/javascript" src="../includes/js/app.js" async></script> -->
+ 	<script type="text/javascript" src="../includes/js/app.js" async></script>
 	<!-- PWA ===== nao retirar  -->
 
    <script type="text/javascript">
