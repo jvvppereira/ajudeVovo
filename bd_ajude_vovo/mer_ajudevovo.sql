@@ -9,24 +9,24 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- Schema mydb
 -- -----------------------------------------------------
 -- -----------------------------------------------------
--- Schema ajudevovo
+-- Schema cel0enk8omsybxvx
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema ajudevovo
+-- Schema cel0enk8omsybxvx
 -- -----------------------------------------------------
 
-DROP DATABASE IF EXISTS ajudevovo;
+DROP DATABASE IF EXISTS cel0enk8omsybxvx;
 
-CREATE SCHEMA IF NOT EXISTS `ajudevovo` DEFAULT CHARACTER SET latin1 ;
-USE `ajudevovo` ;
+CREATE SCHEMA IF NOT EXISTS `cel0enk8omsybxvx` DEFAULT CHARACTER SET latin1 ;
+USE `cel0enk8omsybxvx` ;
 
 -- -----------------------------------------------------
--- Table `ajudevovo`.`avaliacao`
+-- Table `cel0enk8omsybxvx`.`avaliacao`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ajudevovo`.`avaliacao` ;
+DROP TABLE IF EXISTS `cel0enk8omsybxvx`.`avaliacao` ;
 
-CREATE TABLE IF NOT EXISTS `ajudevovo`.`avaliacao` (
+CREATE TABLE IF NOT EXISTS `cel0enk8omsybxvx`.`avaliacao` (
   `id_avaliacao` INT(11) NOT NULL AUTO_INCREMENT,
   `nota` INT(11) NULL DEFAULT NULL,
   `comentario` VARCHAR(255) NULL DEFAULT NULL,
@@ -36,11 +36,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ajudevovo`.`banco`
+-- Table `cel0enk8omsybxvx`.`banco`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ajudevovo`.`banco` ;
+DROP TABLE IF EXISTS `cel0enk8omsybxvx`.`banco` ;
 
-CREATE TABLE IF NOT EXISTS `ajudevovo`.`banco` (
+CREATE TABLE IF NOT EXISTS `cel0enk8omsybxvx`.`banco` (
   `id_banco` INT(11) NOT NULL AUTO_INCREMENT,
   `numero_banco` INT(11) NULL DEFAULT NULL,
   `descricao` VARCHAR(255) NULL DEFAULT NULL,
@@ -50,11 +50,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ajudevovo`.`pais`
+-- Table `cel0enk8omsybxvx`.`pais`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ajudevovo`.`pais` ;
+DROP TABLE IF EXISTS `cel0enk8omsybxvx`.`pais` ;
 
-CREATE TABLE IF NOT EXISTS `ajudevovo`.`pais` (
+CREATE TABLE IF NOT EXISTS `cel0enk8omsybxvx`.`pais` (
   `id_pais` INT(11) NOT NULL AUTO_INCREMENT,
   `descricao` VARCHAR(255) NULL DEFAULT NULL,
   `sigla` VARCHAR(255) NULL DEFAULT NULL,
@@ -64,11 +64,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ajudevovo`.`estado`
+-- Table `cel0enk8omsybxvx`.`estado`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ajudevovo`.`estado` ;
+DROP TABLE IF EXISTS `cel0enk8omsybxvx`.`estado` ;
 
-CREATE TABLE IF NOT EXISTS `ajudevovo`.`estado` (
+CREATE TABLE IF NOT EXISTS `cel0enk8omsybxvx`.`estado` (
   `id_estado` INT(11) NOT NULL AUTO_INCREMENT,
   `id_pais` INT(11) NOT NULL,
   `descricao` VARCHAR(255) NULL DEFAULT NULL,
@@ -77,17 +77,17 @@ CREATE TABLE IF NOT EXISTS `ajudevovo`.`estado` (
   INDEX `id_pais` (`id_pais` ASC),
   CONSTRAINT `estado_ibfk_1`
     FOREIGN KEY (`id_pais`)
-    REFERENCES `ajudevovo`.`pais` (`id_pais`))
+    REFERENCES `cel0enk8omsybxvx`.`pais` (`id_pais`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ajudevovo`.`cidade`
+-- Table `cel0enk8omsybxvx`.`cidade`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ajudevovo`.`cidade` ;
+DROP TABLE IF EXISTS `cel0enk8omsybxvx`.`cidade` ;
 
-CREATE TABLE IF NOT EXISTS `ajudevovo`.`cidade` (
+CREATE TABLE IF NOT EXISTS `cel0enk8omsybxvx`.`cidade` (
   `id_cidade` INT(11) NOT NULL AUTO_INCREMENT,
   `id_estado` INT(11) NOT NULL,
   `descricao` VARCHAR(255) NULL DEFAULT NULL,
@@ -95,17 +95,17 @@ CREATE TABLE IF NOT EXISTS `ajudevovo`.`cidade` (
   INDEX `id_estado` (`id_estado` ASC),
   CONSTRAINT `cidade_ibfk_1`
     FOREIGN KEY (`id_estado`)
-    REFERENCES `ajudevovo`.`estado` (`id_estado`))
+    REFERENCES `cel0enk8omsybxvx`.`estado` (`id_estado`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ajudevovo`.`perfil`
+-- Table `cel0enk8omsybxvx`.`perfil`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ajudevovo`.`perfil` ;
+DROP TABLE IF EXISTS `cel0enk8omsybxvx`.`perfil` ;
 
-CREATE TABLE IF NOT EXISTS `ajudevovo`.`perfil` (
+CREATE TABLE IF NOT EXISTS `cel0enk8omsybxvx`.`perfil` (
   `id_perfil` INT(11) NOT NULL AUTO_INCREMENT,
   `descricao` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id_perfil`))
@@ -114,11 +114,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ajudevovo`.`pessoa_fisica`
+-- Table `cel0enk8omsybxvx`.`pessoa_fisica`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ajudevovo`.`pessoa_fisica` ;
+DROP TABLE IF EXISTS `cel0enk8omsybxvx`.`pessoa_fisica` ;
 
-CREATE TABLE IF NOT EXISTS `ajudevovo`.`pessoa_fisica` (
+CREATE TABLE IF NOT EXISTS `cel0enk8omsybxvx`.`pessoa_fisica` (
   `id_pessoa_fisica` INT(11) NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(255) NULL DEFAULT NULL,
   `dt_nascimento` DATE NULL DEFAULT NULL,
@@ -141,17 +141,17 @@ CREATE TABLE IF NOT EXISTS `ajudevovo`.`pessoa_fisica` (
   INDEX `fk_pessoa_fisica_estado1_idx` (`id_estado` ASC),
   CONSTRAINT `fk_pessoa_fisica_cidade1`
     FOREIGN KEY (`id_cidade`)
-    REFERENCES `ajudevovo`.`cidade` (`id_cidade`)
+    REFERENCES `cel0enk8omsybxvx`.`cidade` (`id_cidade`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_pessoa_fisica_estado1`
     FOREIGN KEY (`id_estado`)
-    REFERENCES `ajudevovo`.`estado` (`id_estado`)
+    REFERENCES `cel0enk8omsybxvx`.`estado` (`id_estado`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_pessoa_fisica_perfil1`
     FOREIGN KEY (`id_perfil`)
-    REFERENCES `ajudevovo`.`perfil` (`id_perfil`)
+    REFERENCES `cel0enk8omsybxvx`.`perfil` (`id_perfil`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -161,11 +161,11 @@ ALTER TABLE `pessoa_fisica`
   ADD UNIQUE INDEX `UX_LOGIN` (`login`);
 
 -- -----------------------------------------------------
--- Table `ajudevovo`.`cartao_credito`
+-- Table `cel0enk8omsybxvx`.`cartao_credito`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ajudevovo`.`cartao_credito` ;
+DROP TABLE IF EXISTS `cel0enk8omsybxvx`.`cartao_credito` ;
 
-CREATE TABLE IF NOT EXISTS `ajudevovo`.`cartao_credito` (
+CREATE TABLE IF NOT EXISTS `cel0enk8omsybxvx`.`cartao_credito` (
   `id_cartao` INT(11) NOT NULL AUTO_INCREMENT,
   `id_pessoa` INT(11) NOT NULL,
   `numero_cartao` BIGINT(20) NULL DEFAULT NULL,
@@ -176,17 +176,17 @@ CREATE TABLE IF NOT EXISTS `ajudevovo`.`cartao_credito` (
   INDEX `id_pessoa` (`id_pessoa` ASC),
   CONSTRAINT `cartao_credito_ibfk_1`
     FOREIGN KEY (`id_pessoa`)
-    REFERENCES `ajudevovo`.`pessoa_fisica` (`id_pessoa_fisica`))
+    REFERENCES `cel0enk8omsybxvx`.`pessoa_fisica` (`id_pessoa_fisica`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ajudevovo`.`categoria`
+-- Table `cel0enk8omsybxvx`.`categoria`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ajudevovo`.`categoria` ;
+DROP TABLE IF EXISTS `cel0enk8omsybxvx`.`categoria` ;
 
-CREATE TABLE IF NOT EXISTS `ajudevovo`.`categoria` (
+CREATE TABLE IF NOT EXISTS `cel0enk8omsybxvx`.`categoria` (
   `id_categoria` INT(11) NOT NULL AUTO_INCREMENT,
   `descricao` VARCHAR(255) NOT NULL,
   `taxa` FLOAT NOT NULL,
@@ -197,11 +197,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ajudevovo`.`conta_bancaria`
+-- Table `cel0enk8omsybxvx`.`conta_bancaria`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ajudevovo`.`conta_bancaria` ;
+DROP TABLE IF EXISTS `cel0enk8omsybxvx`.`conta_bancaria` ;
 
-CREATE TABLE IF NOT EXISTS `ajudevovo`.`conta_bancaria` (
+CREATE TABLE IF NOT EXISTS `cel0enk8omsybxvx`.`conta_bancaria` (
   `id_conta_bancaria` INT(11) NOT NULL AUTO_INCREMENT,
   `id_banco` INT(11) NOT NULL,
   `numero_agencia` INT(11) NULL DEFAULT NULL,
@@ -210,17 +210,17 @@ CREATE TABLE IF NOT EXISTS `ajudevovo`.`conta_bancaria` (
   INDEX `id_banco` (`id_banco` ASC),
   CONSTRAINT `conta_bancaria_ibfk_1`
     FOREIGN KEY (`id_banco`)
-    REFERENCES `ajudevovo`.`banco` (`id_banco`))
+    REFERENCES `cel0enk8omsybxvx`.`banco` (`id_banco`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ajudevovo`.`tipo_contato`
+-- Table `cel0enk8omsybxvx`.`tipo_contato`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ajudevovo`.`tipo_contato` ;
+DROP TABLE IF EXISTS `cel0enk8omsybxvx`.`tipo_contato` ;
 
-CREATE TABLE IF NOT EXISTS `ajudevovo`.`tipo_contato` (
+CREATE TABLE IF NOT EXISTS `cel0enk8omsybxvx`.`tipo_contato` (
   `id_tipo_contato` INT(11) NOT NULL AUTO_INCREMENT,
   `descricao` VARCHAR(255) NULL DEFAULT NULL,
   PRIMARY KEY (`id_tipo_contato`))
@@ -229,11 +229,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ajudevovo`.`contato`
+-- Table `cel0enk8omsybxvx`.`contato`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ajudevovo`.`contato` ;
+DROP TABLE IF EXISTS `cel0enk8omsybxvx`.`contato` ;
 
-CREATE TABLE IF NOT EXISTS `ajudevovo`.`contato` (
+CREATE TABLE IF NOT EXISTS `cel0enk8omsybxvx`.`contato` (
   `id_contato` INT(11) NOT NULL AUTO_INCREMENT,
   `id_pessoa` INT(11) NOT NULL,
   `id_tipo_contato` INT(11) NOT NULL,
@@ -242,34 +242,34 @@ CREATE TABLE IF NOT EXISTS `ajudevovo`.`contato` (
   INDEX `id_tipo_contato` (`id_tipo_contato` ASC),
   CONSTRAINT `contato_ibfk_1`
     FOREIGN KEY (`id_tipo_contato`)
-    REFERENCES `ajudevovo`.`tipo_contato` (`id_tipo_contato`))
+    REFERENCES `cel0enk8omsybxvx`.`tipo_contato` (`id_tipo_contato`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ajudevovo`.`contratante`
+-- Table `cel0enk8omsybxvx`.`contratante`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ajudevovo`.`contratante` ;
+DROP TABLE IF EXISTS `cel0enk8omsybxvx`.`contratante` ;
 
-CREATE TABLE IF NOT EXISTS `ajudevovo`.`contratante` (
+CREATE TABLE IF NOT EXISTS `cel0enk8omsybxvx`.`contratante` (
   `id_contratante` INT(11) NOT NULL AUTO_INCREMENT,
   `id_pessoa` INT(11) NOT NULL,
   PRIMARY KEY (`id_contratante`),
   INDEX `id_pessoa` (`id_pessoa` ASC),
   CONSTRAINT `contratante_ibfk_1`
     FOREIGN KEY (`id_pessoa`)
-    REFERENCES `ajudevovo`.`pessoa_fisica` (`id_pessoa_fisica`))
+    REFERENCES `cel0enk8omsybxvx`.`pessoa_fisica` (`id_pessoa_fisica`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ajudevovo`.`contratante_avaliacao`
+-- Table `cel0enk8omsybxvx`.`contratante_avaliacao`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ajudevovo`.`contratante_avaliacao` ;
+DROP TABLE IF EXISTS `cel0enk8omsybxvx`.`contratante_avaliacao` ;
 
-CREATE TABLE IF NOT EXISTS `ajudevovo`.`contratante_avaliacao` (
+CREATE TABLE IF NOT EXISTS `cel0enk8omsybxvx`.`contratante_avaliacao` (
   `id_contratante_avaliacao` INT(11) NOT NULL AUTO_INCREMENT,
   `id_contratante` INT(11) NOT NULL,
   `id_avaliacao` INT(11) NOT NULL,
@@ -278,20 +278,20 @@ CREATE TABLE IF NOT EXISTS `ajudevovo`.`contratante_avaliacao` (
   INDEX `id_avaliacao` (`id_avaliacao` ASC),
   CONSTRAINT `contratante_avaliacao_ibfk_1`
     FOREIGN KEY (`id_contratante`)
-    REFERENCES `ajudevovo`.`contratante` (`id_contratante`),
+    REFERENCES `cel0enk8omsybxvx`.`contratante` (`id_contratante`),
   CONSTRAINT `contratante_avaliacao_ibfk_2`
     FOREIGN KEY (`id_avaliacao`)
-    REFERENCES `ajudevovo`.`avaliacao` (`id_avaliacao`))
+    REFERENCES `cel0enk8omsybxvx`.`avaliacao` (`id_avaliacao`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ajudevovo`.`necessidade_especial`
+-- Table `cel0enk8omsybxvx`.`necessidade_especial`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ajudevovo`.`necessidade_especial` ;
+DROP TABLE IF EXISTS `cel0enk8omsybxvx`.`necessidade_especial` ;
 
-CREATE TABLE IF NOT EXISTS `ajudevovo`.`necessidade_especial` (
+CREATE TABLE IF NOT EXISTS `cel0enk8omsybxvx`.`necessidade_especial` (
   `id_necessidade_especial` INT(11) NOT NULL AUTO_INCREMENT,
   `descricao` VARCHAR(100) NULL DEFAULT NULL,
   PRIMARY KEY (`id_necessidade_especial`),
@@ -302,11 +302,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ajudevovo`.`contratante_necessidade_especial`
+-- Table `cel0enk8omsybxvx`.`contratante_necessidade_especial`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ajudevovo`.`contratante_necessidade_especial` ;
+DROP TABLE IF EXISTS `cel0enk8omsybxvx`.`contratante_necessidade_especial` ;
 
-CREATE TABLE IF NOT EXISTS `ajudevovo`.`contratante_necessidade_especial` (
+CREATE TABLE IF NOT EXISTS `cel0enk8omsybxvx`.`contratante_necessidade_especial` (
   `id_contratante_necessidade_especial` INT(11) NOT NULL AUTO_INCREMENT,
   `necessidade_especial_id_necessidade_especial` INT(11) NOT NULL,
   `contratante_id_contratante` INT(11) NOT NULL,
@@ -315,12 +315,12 @@ CREATE TABLE IF NOT EXISTS `ajudevovo`.`contratante_necessidade_especial` (
   INDEX `fk_contratante_necessidade_especial_contratante1_idx` (`contratante_id_contratante` ASC),
   CONSTRAINT `fk_contratante_necessidade_especial_contratante1`
     FOREIGN KEY (`contratante_id_contratante`)
-    REFERENCES `ajudevovo`.`contratante` (`id_contratante`)
+    REFERENCES `cel0enk8omsybxvx`.`contratante` (`id_contratante`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_contratante_necessidade_especial_necessidade_especial1`
     FOREIGN KEY (`necessidade_especial_id_necessidade_especial`)
-    REFERENCES `ajudevovo`.`necessidade_especial` (`id_necessidade_especial`)
+    REFERENCES `cel0enk8omsybxvx`.`necessidade_especial` (`id_necessidade_especial`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -328,11 +328,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ajudevovo`.`prestador`
+-- Table `cel0enk8omsybxvx`.`prestador`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ajudevovo`.`prestador` ;
+DROP TABLE IF EXISTS `cel0enk8omsybxvx`.`prestador` ;
 
-CREATE TABLE IF NOT EXISTS `ajudevovo`.`prestador` (
+CREATE TABLE IF NOT EXISTS `cel0enk8omsybxvx`.`prestador` (
   `id_prestador` INT(11) NOT NULL AUTO_INCREMENT,
   `id_pessoa` INT(11) NOT NULL,
   `id_conta_bancaria` INT(11) NULL DEFAULT NULL,
@@ -341,20 +341,20 @@ CREATE TABLE IF NOT EXISTS `ajudevovo`.`prestador` (
   INDEX `id_conta_bancaria` (`id_conta_bancaria` ASC),
   CONSTRAINT `prestador_ibfk_1`
     FOREIGN KEY (`id_pessoa`)
-    REFERENCES `ajudevovo`.`pessoa_fisica` (`id_pessoa_fisica`),
+    REFERENCES `cel0enk8omsybxvx`.`pessoa_fisica` (`id_pessoa_fisica`),
   CONSTRAINT `prestador_ibfk_2`
     FOREIGN KEY (`id_conta_bancaria`)
-    REFERENCES `ajudevovo`.`conta_bancaria` (`id_conta_bancaria`))
+    REFERENCES `cel0enk8omsybxvx`.`conta_bancaria` (`id_conta_bancaria`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ajudevovo`.`servico`
+-- Table `cel0enk8omsybxvx`.`servico`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ajudevovo`.`servico` ;
+DROP TABLE IF EXISTS `cel0enk8omsybxvx`.`servico` ;
 
-CREATE TABLE IF NOT EXISTS `ajudevovo`.`servico` (
+CREATE TABLE IF NOT EXISTS `cel0enk8omsybxvx`.`servico` (
   `id_servico` INT(11) NOT NULL AUTO_INCREMENT,
   `id_prestador` INT(11) NOT NULL,
   `id_categoria` INT(11) NOT NULL,
@@ -367,20 +367,20 @@ CREATE TABLE IF NOT EXISTS `ajudevovo`.`servico` (
   INDEX `id_categoria` (`id_categoria` ASC),
   CONSTRAINT `servico_ibfk_1`
     FOREIGN KEY (`id_prestador`)
-    REFERENCES `ajudevovo`.`prestador` (`id_prestador`),
+    REFERENCES `cel0enk8omsybxvx`.`prestador` (`id_prestador`),
   CONSTRAINT `servico_ibfk_2`
     FOREIGN KEY (`id_categoria`)
-    REFERENCES `ajudevovo`.`categoria` (`id_categoria`))
+    REFERENCES `cel0enk8omsybxvx`.`categoria` (`id_categoria`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ajudevovo`.`dia_disponivel`
+-- Table `cel0enk8omsybxvx`.`dia_disponivel`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ajudevovo`.`dia_disponivel` ;
+DROP TABLE IF EXISTS `cel0enk8omsybxvx`.`dia_disponivel` ;
 
-CREATE TABLE IF NOT EXISTS `ajudevovo`.`dia_disponivel` (
+CREATE TABLE IF NOT EXISTS `cel0enk8omsybxvx`.`dia_disponivel` (
   `id_dia_disponivel` INT(11) NOT NULL AUTO_INCREMENT,
   `id_servico` INT(11) NOT NULL,
   `nr_dia` INT(11) NULL DEFAULT NULL,
@@ -389,17 +389,17 @@ CREATE TABLE IF NOT EXISTS `ajudevovo`.`dia_disponivel` (
   INDEX `id_servico` (`id_servico` ASC),
   CONSTRAINT `dia_disponivel_ibfk_1`
     FOREIGN KEY (`id_servico`)
-    REFERENCES `ajudevovo`.`servico` (`id_servico`))
+    REFERENCES `cel0enk8omsybxvx`.`servico` (`id_servico`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ajudevovo`.`endereco`
+-- Table `cel0enk8omsybxvx`.`endereco`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ajudevovo`.`endereco` ;
+DROP TABLE IF EXISTS `cel0enk8omsybxvx`.`endereco` ;
 
-CREATE TABLE IF NOT EXISTS `ajudevovo`.`endereco` (
+CREATE TABLE IF NOT EXISTS `cel0enk8omsybxvx`.`endereco` (
   `id_endereco` INT(11) NOT NULL AUTO_INCREMENT,
   `id_cidade` INT(11) NOT NULL,
   `id_pessoa` INT(11) NOT NULL,
@@ -413,20 +413,20 @@ CREATE TABLE IF NOT EXISTS `ajudevovo`.`endereco` (
   INDEX `id_pessoa` (`id_pessoa` ASC),
   CONSTRAINT `endereco_ibfk_1`
     FOREIGN KEY (`id_cidade`)
-    REFERENCES `ajudevovo`.`cidade` (`id_cidade`),
+    REFERENCES `cel0enk8omsybxvx`.`cidade` (`id_cidade`),
   CONSTRAINT `endereco_ibfk_2`
     FOREIGN KEY (`id_pessoa`)
-    REFERENCES `ajudevovo`.`pessoa_fisica` (`id_pessoa_fisica`))
+    REFERENCES `cel0enk8omsybxvx`.`pessoa_fisica` (`id_pessoa_fisica`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ajudevovo`.`estado_operacao`
+-- Table `cel0enk8omsybxvx`.`estado_operacao`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ajudevovo`.`estado_operacao` ;
+DROP TABLE IF EXISTS `cel0enk8omsybxvx`.`estado_operacao` ;
 
-CREATE TABLE IF NOT EXISTS `ajudevovo`.`estado_operacao` (
+CREATE TABLE IF NOT EXISTS `cel0enk8omsybxvx`.`estado_operacao` (
   `id_estado_operacao` INT(11) NOT NULL AUTO_INCREMENT,
   `descricao` VARCHAR(255) NULL DEFAULT NULL,
   PRIMARY KEY (`id_estado_operacao`))
@@ -435,11 +435,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ajudevovo`.`forma_pagamento`
+-- Table `cel0enk8omsybxvx`.`forma_pagamento`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ajudevovo`.`forma_pagamento` ;
+DROP TABLE IF EXISTS `cel0enk8omsybxvx`.`forma_pagamento` ;
 
-CREATE TABLE IF NOT EXISTS `ajudevovo`.`forma_pagamento` (
+CREATE TABLE IF NOT EXISTS `cel0enk8omsybxvx`.`forma_pagamento` (
   `id_forma_pagamento` INT(11) NOT NULL AUTO_INCREMENT,
   `descricao` VARCHAR(255) NULL DEFAULT NULL,
   PRIMARY KEY (`id_forma_pagamento`))
@@ -448,11 +448,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ajudevovo`.`horario_disponivel`
+-- Table `cel0enk8omsybxvx`.`horario_disponivel`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ajudevovo`.`horario_disponivel` ;
+DROP TABLE IF EXISTS `cel0enk8omsybxvx`.`horario_disponivel` ;
 
-CREATE TABLE IF NOT EXISTS `ajudevovo`.`horario_disponivel` (
+CREATE TABLE IF NOT EXISTS `cel0enk8omsybxvx`.`horario_disponivel` (
   `id_horario_disponivel` INT(11) NOT NULL AUTO_INCREMENT,
   `id_dia_disponivel` INT(11) NOT NULL,
   `horario_inicio` TIME NOT NULL,
@@ -461,17 +461,17 @@ CREATE TABLE IF NOT EXISTS `ajudevovo`.`horario_disponivel` (
   INDEX `id_dia_disponivel` (`id_dia_disponivel` ASC),
   CONSTRAINT `horario_disponivel_ibfk_1`
     FOREIGN KEY (`id_dia_disponivel`)
-    REFERENCES `ajudevovo`.`dia_disponivel` (`id_dia_disponivel`))
+    REFERENCES `cel0enk8omsybxvx`.`dia_disponivel` (`id_dia_disponivel`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ajudevovo`.`servico_avaliacao`
+-- Table `cel0enk8omsybxvx`.`servico_avaliacao`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ajudevovo`.`servico_avaliacao` ;
+DROP TABLE IF EXISTS `cel0enk8omsybxvx`.`servico_avaliacao` ;
 
-CREATE TABLE IF NOT EXISTS `ajudevovo`.`servico_avaliacao` (
+CREATE TABLE IF NOT EXISTS `cel0enk8omsybxvx`.`servico_avaliacao` (
   `id_servico_avaliacao` INT(11) NOT NULL AUTO_INCREMENT,
   `id_servico` INT(11) NOT NULL,
   `id_avaliacao` INT(11) NOT NULL,
@@ -480,20 +480,20 @@ CREATE TABLE IF NOT EXISTS `ajudevovo`.`servico_avaliacao` (
   INDEX `id_avaliacao` (`id_avaliacao` ASC),
   CONSTRAINT `servico_avaliacao_ibfk_1`
     FOREIGN KEY (`id_servico`)
-    REFERENCES `ajudevovo`.`servico` (`id_servico`),
+    REFERENCES `cel0enk8omsybxvx`.`servico` (`id_servico`),
   CONSTRAINT `servico_avaliacao_ibfk_2`
     FOREIGN KEY (`id_avaliacao`)
-    REFERENCES `ajudevovo`.`avaliacao` (`id_avaliacao`))
+    REFERENCES `cel0enk8omsybxvx`.`avaliacao` (`id_avaliacao`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ajudevovo`.`servico_solicitado`
+-- Table `cel0enk8omsybxvx`.`servico_solicitado`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ajudevovo`.`servico_solicitado` ;
+DROP TABLE IF EXISTS `cel0enk8omsybxvx`.`servico_solicitado` ;
 
-CREATE TABLE IF NOT EXISTS `ajudevovo`.`servico_solicitado` (
+CREATE TABLE IF NOT EXISTS `cel0enk8omsybxvx`.`servico_solicitado` (
   `id_servico_solicitacao` INT(11) NOT NULL AUTO_INCREMENT,
   `id_servico` INT(11) NOT NULL,
   `id_contratante` INT(11) NOT NULL,
@@ -510,22 +510,22 @@ CREATE TABLE IF NOT EXISTS `ajudevovo`.`servico_solicitado` (
   INDEX `id_estado_operacao` (`id_estado_operacao` ASC),
   CONSTRAINT `servico_solicitado_ibfk_1`
     FOREIGN KEY (`id_servico`)
-    REFERENCES `ajudevovo`.`servico` (`id_servico`),
+    REFERENCES `cel0enk8omsybxvx`.`servico` (`id_servico`),
   CONSTRAINT `servico_solicitado_ibfk_2`
     FOREIGN KEY (`id_contratante`)
-    REFERENCES `ajudevovo`.`contratante` (`id_contratante`),
+    REFERENCES `cel0enk8omsybxvx`.`contratante` (`id_contratante`),
   CONSTRAINT `servico_solicitado_ibfk_3`
     FOREIGN KEY (`id_forma_pagamento`)
-    REFERENCES `ajudevovo`.`forma_pagamento` (`id_forma_pagamento`),
+    REFERENCES `cel0enk8omsybxvx`.`forma_pagamento` (`id_forma_pagamento`),
   CONSTRAINT `servico_solicitado_ibfk_4`
     FOREIGN KEY (`id_estado_operacao`)
-    REFERENCES `ajudevovo`.`estado_operacao` (`id_estado_operacao`))
+    REFERENCES `cel0enk8omsybxvx`.`estado_operacao` (`id_estado_operacao`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
-DROP TABLE IF EXISTS `ajudevovo`.`estado_pessoa_fisica`;
+DROP TABLE IF EXISTS `cel0enk8omsybxvx`.`estado_pessoa_fisica`;
 
-CREATE TABLE IF NOT EXISTS `ajudevovo`.`estado_pessoa_fisica` (
+CREATE TABLE IF NOT EXISTS `cel0enk8omsybxvx`.`estado_pessoa_fisica` (
   id_estado_pessoa_fisica int primary key auto_increment,
   descricao varchar(100)
 ) Engine=innoDB;
@@ -544,17 +544,17 @@ DROP FOREIGN KEY `horario_disponivel_ibfk_1`;
 ALTER TABLE `horario_disponivel`
 ADD CONSTRAINT `horario_disponivel_ibfk_1` FOREIGN KEY (`id_dia_disponivel`) REFERENCES `dia_disponivel` (`id_dia_disponivel`) ON DELETE CASCADE;
 
-USE `ajudevovo` ;
+USE `cel0enk8omsybxvx` ;
 
 -- -----------------------------------------------------
 -- function obter_avaliacao_prestador
 -- -----------------------------------------------------
-USE `ajudevovo`;
-DROP function IF EXISTS `ajudevovo`.`obter_avaliacao_prestador`;
+USE `cel0enk8omsybxvx`;
+DROP function IF EXISTS `cel0enk8omsybxvx`.`obter_avaliacao_prestador`;
 
 DELIMITER $$
-USE `ajudevovo`$$
-CREATE DEFINER=`root`@`localhost` FUNCTION `obter_avaliacao_prestador`(`id_prestador_p` INT) RETURNS float
+USE `cel0enk8omsybxvx`$$
+CREATE  FUNCTION `obter_avaliacao_prestador`(`id_prestador_p` INT) RETURNS float
 BEGIN
 	DECLARE retorno float;
 	
@@ -581,12 +581,12 @@ DELIMITER ;
 -- function obter_avaliacao_servico
 -- -----------------------------------------------------
 
-USE `ajudevovo`;
-DROP function IF EXISTS `ajudevovo`.`obter_avaliacao_servico`;
+USE `cel0enk8omsybxvx`;
+DROP function IF EXISTS `cel0enk8omsybxvx`.`obter_avaliacao_servico`;
 
 DELIMITER $$
-USE `ajudevovo`$$
-CREATE DEFINER=`root`@`localhost` FUNCTION `obter_avaliacao_servico`(`id_servico_p` INT) RETURNS float
+USE `cel0enk8omsybxvx`$$
+CREATE  FUNCTION `obter_avaliacao_servico`(`id_servico_p` INT) RETURNS float
 BEGIN
 	DECLARE retorno float;
 	
@@ -613,12 +613,12 @@ DELIMITER ;
 -- function obter_avaliacao_contratante
 -- -----------------------------------------------------
 
-USE `ajudevovo`;
-DROP function IF EXISTS `ajudevovo`.`obter_avaliacao_contratante`;
+USE `cel0enk8omsybxvx`;
+DROP function IF EXISTS `cel0enk8omsybxvx`.`obter_avaliacao_contratante`;
 
 DELIMITER $$
-USE `ajudevovo`$$
-CREATE DEFINER=`root`@`localhost` FUNCTION `obter_avaliacao_contratante`(`id_contratante_p` INT) RETURNS float
+USE `cel0enk8omsybxvx`$$
+CREATE  FUNCTION `obter_avaliacao_contratante`(`id_contratante_p` INT) RETURNS float
 BEGIN
 DECLARE retorno float;
 	
@@ -645,13 +645,13 @@ DELIMITER ;
 -- procedure inativar_servicos_prestador
 -- -----------------------------------------------------
 
-USE `ajudevovo`;
-DROP PROCEDURE IF EXISTS `ajudevovo`.`inativar_servicos_prestador`;
+USE `cel0enk8omsybxvx`;
+DROP PROCEDURE IF EXISTS `cel0enk8omsybxvx`.`inativar_servicos_prestador`;
 
 DELIMITER $$
-USE `ajudevovo`$$
+USE `cel0enk8omsybxvx`$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `inativar_servicos_prestador`(
+CREATE  PROCEDURE `inativar_servicos_prestador`(
 	IN `id_prestador_p` INT
 
 )
@@ -674,11 +674,11 @@ DELIMITER ;
 -- trigger pessoa_fisica_after_update
 -- -----------------------------------------------------
 
-USE `ajudevovo`;
-DROP TRIGGER IF EXISTS `ajudevovo`.`pessoa_fisica_after_update`;
+USE `cel0enk8omsybxvx`;
+DROP TRIGGER IF EXISTS `cel0enk8omsybxvx`.`pessoa_fisica_after_update`;
 
 DELIMITER $$
-USE `ajudevovo`$$
+USE `cel0enk8omsybxvx`$$
 
 CREATE TRIGGER `pessoa_fisica_after_update` AFTER UPDATE ON `pessoa_fisica` FOR EACH ROW BEGIN
 declare id_prestador_v int;
@@ -705,11 +705,11 @@ DELIMITER ;
 -- trigger servico_solicitado_before_insert
 -- -----------------------------------------------------
 
-USE `ajudevovo`;
-DROP TRIGGER IF EXISTS `ajudevovo`.`servico_solicitado_before_insert`;
+USE `cel0enk8omsybxvx`;
+DROP TRIGGER IF EXISTS `cel0enk8omsybxvx`.`servico_solicitado_before_insert`;
 
 DELIMITER $$
-USE `ajudevovo`$$
+USE `cel0enk8omsybxvx`$$
 CREATE TRIGGER `servico_solicitado_before_insert` BEFORE INSERT ON `servico_solicitado` FOR EACH ROW BEGIN
 	DECLARE novoValor Float;
 
@@ -731,12 +731,12 @@ DELIMITER ;
 -- function obter_avaliacao
 -- -----------------------------------------------------
 
-USE `ajudevovo`;
-DROP function IF EXISTS `ajudevovo`.`obter_avaliacao`;
+USE `cel0enk8omsybxvx`;
+DROP function IF EXISTS `cel0enk8omsybxvx`.`obter_avaliacao`;
 
 DELIMITER $$
-USE `ajudevovo`$$
-CREATE DEFINER=`root`@`localhost` FUNCTION `obter_avaliacao`(`ie_opcao_p` CHAR, `id_opcao_p` INT) RETURNS float
+USE `cel0enk8omsybxvx`$$
+CREATE  FUNCTION `obter_avaliacao`(`ie_opcao_p` CHAR, `id_opcao_p` INT) RETURNS float
 BEGIN
 	/*
 		S - Serviço
@@ -762,12 +762,12 @@ DELIMITER ;
 -- function obter_se_pode_excluir
 -- -----------------------------------------------------
 
-USE `ajudevovo`;
-DROP function IF EXISTS `ajudevovo`.`obter_se_pode_excluir`;
+USE `cel0enk8omsybxvx`;
+DROP function IF EXISTS `cel0enk8omsybxvx`.`obter_se_pode_excluir`;
 
 DELIMITER $$
-USE `ajudevovo`$$
-CREATE DEFINER=`root`@`localhost` FUNCTION `obter_se_pode_excluir`(`id_prestador_p` INT) RETURNS varchar(1)
+USE `cel0enk8omsybxvx`$$
+CREATE  FUNCTION `obter_se_pode_excluir`(`id_prestador_p` INT) RETURNS varchar(1)
 BEGIN
   DECLARE retorno varchar(1);
   
@@ -794,12 +794,12 @@ DELIMITER ;
 -- function obter_quantidade_servicos
 -- -----------------------------------------------------
 
-USE `ajudevovo`;
-DROP function IF EXISTS `ajudevovo`.`obter_quantidade_servicos`;
+USE `cel0enk8omsybxvx`;
+DROP function IF EXISTS `cel0enk8omsybxvx`.`obter_quantidade_servicos`;
 
 DELIMITER $$
-USE `ajudevovo`$$
-CREATE DEFINER=`root`@`localhost` FUNCTION `obter_quantidade_servicos`(`id_servico_p` INT) RETURNS int(11)
+USE `cel0enk8omsybxvx`$$
+CREATE  FUNCTION `obter_quantidade_servicos`(`id_servico_p` INT) RETURNS int(11)
 BEGIN
   DECLARE retorno INT;
   
