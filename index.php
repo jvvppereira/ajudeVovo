@@ -316,3 +316,5 @@ switch (ENVIRONMENT)
  * And away we go...
  */
 require_once BASEPATH.'core/CodeIgniter.php';
+
+ini_set('extensions','php_gd2.dll');
