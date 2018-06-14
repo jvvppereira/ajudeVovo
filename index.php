@@ -1,7 +1,5 @@
 <?php
 
-echo phpinfo();
-
 /**
  * CodeIgniter
  *
