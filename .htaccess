@@ -1,25 +1,20 @@
-# RewriteEngine On
+### Canonicalize codeigniter URLs
+
 # Enforce SSL https://www. 
-# RewriteCond %{SERVER_PORT} 80
-# RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# Codeigniter para as rotas funcionarem
-# RewriteCond %{REQUEST_FILENAME} !-f
-# RewriteCond %{REQUEST_FILENAME} !-d
-# RewriteRule ^(.*)$ index.php/$1 [L]
-
-
-##Force SSL 
-
-#Normal way (in case you need to deploy to NON-heroku)
 RewriteCond %{HTTPS} !=on
+RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-#Heroku way
-RewriteCond %{HTTP:X-Forwarded-Proto} !https 
+###
+# Removes access to the system folder by users.
+# Additionally this will allow you to create a System.php controller,
+# previously this would not have been possible.
+# 'system' can be replaced if you have renamed your system folder.
+RewriteCond %{REQUEST_URI} ^system.*
+RewriteRule ^(.*)$ /index.php/$1 [L]
 
-#If neither above conditions are met, redirect to https
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
+# Checks to see if the user is attempting to access a valid file,
+# such as an image or css document, if this isn't true it sends the
+# request to index.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php/$1 [L]
