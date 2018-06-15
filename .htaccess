@@ -14,3 +14,7 @@ RewriteRule ^(.*)$ index.php/$1 [L]
 #request to index.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+
+#This last condition enables access to the images and css folders, and the robots.txt file
+RewriteCond $1 !^(index\.php|(.*)\.swf|images|robots\.txt|css|js|docs|cache)
+RewriteRule ^(.*)$ index.php/$1 [L]
