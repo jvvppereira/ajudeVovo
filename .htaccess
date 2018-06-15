@@ -1,14 +1,15 @@
-
 RewriteEngine On
 
-# Enforce SSL https://www. 
-RewriteCond %{SERVER_PORT} 80
-RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI}
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R,L]
 
+RewriteBase /
 
-# Codeigniter para as rotas funcionarem
+#'system' can be replaced if you have renamed your system folder.
+RewriteCond %{REQUEST_URI} ^system.*
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+#Checks to see if the user is attempting to access a valid file,
+#such as an image or css document, if this isn't true it sends the
+#request to index.php
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php/$1 [L,NC]
-
-
