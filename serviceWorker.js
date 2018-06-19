@@ -7,8 +7,8 @@
 
 var filesToCache = [];
 
-var cacheName = 'ajudeVovo-v1';
-var dataCacheName = 'ajudeVovoData-v1';
+var cacheName = 'ajudeVovo-v2';
+var dataCacheName = 'ajudeVovoData-v2';
 
 self.addEventListener('install', function(e) {
   console.log('[ServiceWorker] Install');
