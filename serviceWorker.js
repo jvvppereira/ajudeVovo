@@ -71,7 +71,8 @@ self.addEventListener('fetch', function(event) {
             // and because we want the browser to consume the response
             // as well as the cache consuming the response, we need
             // to clone it so we have two streams.
-            var responseToCache = response.clone();
+            var responseToCache = undefined;
+            // response.clone();
 
             caches.open(dataCacheName)
               .then(function(cache) {
