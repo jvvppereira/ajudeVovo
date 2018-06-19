@@ -1,5 +1,6 @@
 {
     "require": {
-        "ext-gd": "*"
+        "ext-gd": "*",
+        "aws/aws-sdk-php": "~2.6"
     }
 }
